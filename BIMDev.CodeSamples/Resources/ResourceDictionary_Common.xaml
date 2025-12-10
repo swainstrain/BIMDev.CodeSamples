@@ -3,15 +3,10 @@
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <ResourceDictionary.MergedDictionaries>
+        
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Chip.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
 
         <ResourceDictionary>
-
             <Style BasedOn="{StaticResource MaterialDesignOutlinedComboBox}"
                    TargetType="{x:Type ComboBox}">
                 <Setter Property="Height"
@@ -19,11 +14,11 @@
                 </Setter>
             </Style>
             
-            <Style BasedOn="{StaticResource MaterialDesignOutlinedTextBox}"
+            <Style BasedOn="{StaticResource MaterialDesignFilledTextBox}"
                    TargetType="{x:Type TextBox}">
             </Style>
             
-            <Style BasedOn="{StaticResource MaterialDesignFlatLightBgButton}"
+            <Style BasedOn="{StaticResource MaterialDesignFlatMidBgButton}"
                    TargetType="{x:Type Button}">
             </Style>
 

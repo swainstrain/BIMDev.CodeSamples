@@ -43,7 +43,7 @@
                   Margin="5,0"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Stretch"
-                  materialDesign:HintAssist.Hint="Select Theme" />
+                  materialDesign:HintAssist.Hint="Sample ComboBox" />
 
         <TextBox x:Name="SampleTextBox"
                  Grid.Row="1"
