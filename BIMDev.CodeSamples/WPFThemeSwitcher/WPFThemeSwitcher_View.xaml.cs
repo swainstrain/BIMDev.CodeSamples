@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using Autodesk.Revit.UI;
 
-namespace BIMDev.CodeSamples.Views
+namespace BIMDev.CodeSamples.WPFThemeSwitcher
 {
     public partial class WPFThemeSwitcher_View : Window
     {
@@ -17,8 +17,8 @@ namespace BIMDev.CodeSamples.Views
             var dictionary = Resources.MergedDictionaries.First();
 
             var source = theme == UITheme.Dark ?
-                "pack://application:,,,/Resources/ResourceDictionary_Dark.xaml" :
-                "pack://application:,,,/Resources/ResourceDictionary_Light.xaml";
+                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Dark.xaml" :
+                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Light.xaml";
 
             dictionary.Source = new Uri(source);
         }

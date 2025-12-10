@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <!--<TargetFramework>net8.0-windows</TargetFramework>-->
         <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
             None
         </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
@@ -38,7 +37,7 @@
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='2026Debug|AnyCPU'">
         <DebugSymbols>true</DebugSymbols>
         <Optimize>false</Optimize>
-        <DebugType>full</DebugType>
+        <DebugType>embedded</DebugType>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DefineConstants>TRACE;DEBUG;DEBUG2026</DefineConstants>
         <OutputPath>bin\2026Debug\</OutputPath>
@@ -51,6 +50,14 @@
         <DefineConstants>TRACE;DEBUG;DEBUG2026</DefineConstants>
         <OutputPath>bin\2026Debug\</OutputPath>
     </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Resources\WPFThemeSwitcher_Icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Page Remove="Resources\ResourceDictionary_Common.xaml" />
+      <Page Remove="Resources\ResourceDictionary_Dark.xaml" />
+      <Page Remove="Resources\ResourceDictionary_Light.xaml" />
+    </ItemGroup>
     <ItemGroup>
         <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     </ItemGroup>
@@ -67,6 +74,9 @@
         </BootstrapperPackage>
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="Resources\WPFThemeSwitcher_Icon.png" />
+    </ItemGroup>
+    <ItemGroup>
         <FrameworkReference Include="Microsoft.WindowsDesktop.App" Condition="$(Configuration.Contains('2026'))" />
     </ItemGroup>
     <ItemGroup>
@@ -74,6 +84,11 @@
     </ItemGroup>
     <ItemGroup Condition="$(Configuration.Contains('2026'))">
         <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2026.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="Resources\ResourceDictionary_Common.xaml" />
+      <Resource Include="Resources\ResourceDictionary_Dark.xaml" />
+      <Resource Include="Resources\ResourceDictionary_Light.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Update="Properties\Settings.Designer.cs">

@@ -1,6 +1,5 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using BIMDev.CodeSamples.Views;
 
 namespace BIMDev.CodeSamples.WPFThemeSwitcher
 {

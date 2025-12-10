@@ -1,159 +1,40 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <ResourceDictionary.MergedDictionaries>
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-        <materialDesign:CustomColorTheme
-            BaseTheme="Light"
-            PrimaryColor="RoyalBlue"
-            SecondaryColor="Lime" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Chip.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
-        <ResourceDictionary
-            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
+    <ResourceDictionary.MergedDictionaries>
+        <materialDesign:CustomColorTheme BaseTheme="Light"
+                                         PrimaryColor="RoyalBlue"
+                                         SecondaryColor="Red" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Chip.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
 
         <ResourceDictionary>
             <!-- datagrid -->
-            <SolidColorBrush
-                x:Key="MaterialDesignPaper"
-                Color="White" />
-            <SolidColorBrush
-                x:Key="TextColor"
-                Color="#212121" />
-            <SolidColorBrush
-                x:Key="WhiteDesignPaper"
-                Color="BlueViolet" />
-            <SolidColorBrush
-                x:Key="WarningDesignPaper"
-                Color="BlueViolet" />
-
+            <SolidColorBrush x:Key="MaterialDesignPaper"
+                             Color="White" />
+            
             <!-- light -->
-            <SolidColorBrush
-                x:Key="PrimaryHueLightBrush"
-                Color="LimeGreen" />
-            <SolidColorBrush
-                x:Key="PrimaryHueLightForegroundBrush"
-                Color="ForestGreen" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light"
+                             Color="LimeGreen" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Light.Foreground"
+                             Color="Black" />
 
             <!-- mid -->
-            <SolidColorBrush
-                x:Key="PrimaryHueMidBrush"
-                Color="RoyalBlue" />
-            <SolidColorBrush
-                x:Key="PrimaryHueMidForegroundBrush"
-                Color="White" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary"
+                             Color="RoyalBlue" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Foreground"
+                             Color="Red" />
 
             <!-- dark-->
-            <SolidColorBrush
-                x:Key="PrimaryHueDarkBrush"
-                Color="#212121" />
-            <SolidColorBrush
-                x:Key="PrimaryHueDarkForegroundBrush"
-                Color="LimeGreen" />
-
-            <!-- accent -->
-            <SolidColorBrush
-                x:Key="SecondaryHueLightBrush"
-                Color="LimeGreen" />
-            <SolidColorBrush
-                x:Key="SecondaryHueLightForegroundBrush"
-                Color="Black" />
-
-            <SolidColorBrush
-                x:Key="SecondaryHueMidBrush"
-                Color="White" />
-            <SolidColorBrush
-                x:Key="SecondaryHueMidForegroundBrush"
-                Color="White" />
-
-            <!-- Progress Bar -->
-            <SolidColorBrush
-                x:Key="PrimaryBrushProgressBar"
-                Color="#EF5350" />
-
-            <SolidColorBrush
-                x:Key="TreeViewMouseHover"
-                Color="#E0E0E0" />
-            <SolidColorBrush
-                x:Key="TreeViewSelected"
-                Color="#BDBDBD" />
-
-            <Style
-                x:Key="RowStyle"
-                BasedOn="{StaticResource MaterialDesignDataGridRow}"
-                TargetType="{x:Type DataGridRow}">
-
-                <Style.Triggers>
-                    <Trigger
-                        Property="IsSelected"
-                        Value="True">
-                        <Setter
-                            Property="Background"
-                            Value="#BDBDBD" />
-                    </Trigger>
-
-                    <DataTrigger
-                        Binding="{Binding IsTemplate}"
-                        Value="True">
-                        <Setter
-                            Property="FontWeight"
-                            Value="Bold" />
-                    </DataTrigger>
-
-                    <DataTrigger
-                        Binding="{Binding IsApplied}"
-                        Value="True">
-                        <Setter
-                            Property="Foreground"
-                            Value="Green" />
-                    </DataTrigger>
-
-                    <DataTrigger
-                        Binding="{Binding Status}"
-                        Value="1">
-                        <Setter
-                            Property="Background"
-                            Value="LightBlue" />
-                    </DataTrigger>
-                    <DataTrigger
-                        Binding="{Binding Status}"
-                        Value="2">
-                        <Setter
-                            Property="Background"
-                            Value="LightYellow" />
-                    </DataTrigger>
-                    <DataTrigger
-                        Binding="{Binding Status}"
-                        Value="3">
-                        <Setter
-                            Property="Background"
-                            Value="LightGreen" />
-                    </DataTrigger>
-                    <DataTrigger
-                        Binding="{Binding Status}"
-                        Value="4">
-                        <Setter
-                            Property="Background"
-                            Value="#E0E0E0" />
-                    </DataTrigger>
-                    <DataTrigger
-                        Binding="{Binding Status}"
-                        Value="5">
-                        <Setter
-                            Property="Background"
-                            Value="IndianRed" />
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark"
+                             Color="#212121" />
+            <SolidColorBrush x:Key="MaterialDesign.Brush.Primary.Dark.Foreground"
+                             Color="LimeGreen" />
 
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
