@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    >
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Chip.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DialogHost.xaml" />
+        <ResourceDictionary
+            Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
+
+        <ResourceDictionary>
+
+            <Style
+                BasedOn="{StaticResource MaterialDesignOutlinedComboBox}"
+                TargetType="{x:Type ComboBox}">
+                <Setter
+                    Property="Height"
+                    Value="50">
+                </Setter>
+            </Style>                      
+
+            <!-- Gray Scale -->
+            <SolidColorBrush
+                x:Key="Gray100"
+                Color="#F5F5F5" />
+            <SolidColorBrush
+                x:Key="Gray200"
+                Color="#EEEEEE" />
+            <SolidColorBrush
+                x:Key="Gray300"
+                Color="#E0E0E0" />
+            <SolidColorBrush
+                x:Key="Gray400"
+                Color="#BDBDBD" />
+            <SolidColorBrush
+                x:Key="Gray500"
+                Color="#9E9E9E" />
+            <SolidColorBrush
+                x:Key="Gray600"
+                Color="#757575" />
+            <SolidColorBrush
+                x:Key="Gray700"
+                Color="#616161" />
+            <SolidColorBrush
+                x:Key="Gray800"
+                Color="#424242" />
+            <SolidColorBrush
+                x:Key="Gray900"
+                Color="#212121" />
+
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
