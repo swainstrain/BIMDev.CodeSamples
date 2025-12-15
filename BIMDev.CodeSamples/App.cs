@@ -1,15 +1,20 @@
-﻿using Autodesk.Revit.UI;
+﻿using Autodesk.Revit.DB.Events;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.ApplicationServices;
 using BIMDev.CodeSamples.WPFThemeSwitcher;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Media.Imaging;
+using BIMDev.CodeSamples.DockablePane;
 
 namespace BIMDev.CodeSamples
 {
     public class App : IExternalApplication
     {
+        public Guid DockablePanelGuid => new Guid("{65B4FB52-EF30-4031-8D6D-CE08618336E7}");
+
         public Result OnStartup(UIControlledApplication application)
         {
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
@@ -36,7 +41,29 @@ namespace BIMDev.CodeSamples
     Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
     "Microsoft.Xaml.Behaviors.dll"));
 
+            application.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized;
+
             return Result.Succeeded;
+        }
+
+        private void ControlledApplication_ApplicationInitialized(object sender, ApplicationInitializedEventArgs e)
+        {
+            var application = sender as Application;
+            var uiApplication = new UIApplication(application);
+
+            DockablePane_Page dock = new DockablePane_Page();
+
+            DockablePaneId id = new DockablePaneId(DockablePanelGuid);
+
+            try
+            {
+                uiApplication.RegisterDockablePane(id, "BIMDev Dockable Pane",
+                        dock as IDockablePaneProvider);
+            }
+            catch (Exception ex)
+            {
+                TaskDialog.Show("Info Message", ex.Message);
+            }
         }
 
         public Result OnShutdown(UIControlledApplication application)
