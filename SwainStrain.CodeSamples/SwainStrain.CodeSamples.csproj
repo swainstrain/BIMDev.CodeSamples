@@ -19,6 +19,8 @@
         <UseApplicationTrust>false</UseApplicationTrust>
         <BootstrapperEnabled>true</BootstrapperEnabled>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <UseWindowsForms>true</UseWindowsForms>
         <UseWPF>true</UseWPF>
@@ -40,6 +42,7 @@
         <DebugType>embedded</DebugType>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DefineConstants>TRACE;DEBUG;DEBUG2026</DefineConstants>
+        <RevitVersion>2026</RevitVersion>
         <OutputPath>bin\2026Debug\</OutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='2026Debug|x64'">
@@ -48,9 +51,11 @@
         <DebugType>full</DebugType>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DefineConstants>TRACE;DEBUG;DEBUG2026</DefineConstants>
+        <RevitVersion>2026</RevitVersion>
         <OutputPath>bin\2026Debug\</OutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="Resources\TaskDialogMultipleOptions_Icon.png" />
       <None Remove="Resources\WPFThemeSwitcher_Icon.png" />
     </ItemGroup>
     <ItemGroup>
@@ -74,6 +79,7 @@
         </BootstrapperPackage>
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="Resources\TaskDialogMultipleOptions_Icon.png" />
       <EmbeddedResource Include="Resources\WPFThemeSwitcher_Icon.png" />
     </ItemGroup>
     <ItemGroup>
@@ -103,4 +109,8 @@
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
         </None>
     </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="copy &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(ProgramData)\Autodesk\Revit\Addins\$(RevitVersion)&quot;" />
+    </Target>
 </Project>

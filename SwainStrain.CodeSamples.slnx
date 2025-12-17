@@ -4,7 +4,7 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="BIMDev.CodeSamples/BIMDev.CodeSamples.csproj">
+  <Project Path="SwainStrain.CodeSamples/SwainStrain.CodeSamples.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
 </Solution>

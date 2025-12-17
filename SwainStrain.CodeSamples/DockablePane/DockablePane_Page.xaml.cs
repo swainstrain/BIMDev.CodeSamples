@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BIMDev.CodeSamples.DockablePane
+namespace SwainStrain.CodeSamples.DockablePane
 {
     /// <summary>
     /// Interaction logic for DockablePane_Page.xaml
@@ -30,8 +30,8 @@ namespace BIMDev.CodeSamples.DockablePane
             var dictionary = Resources.MergedDictionaries.First();
 
             var source = theme == UITheme.Dark ?
-                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Dark.xaml" :
-                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Light.xaml";
+                "pack://application:,,,/SwainStrain.CodeSamples;component/Resources/ResourceDictionary_Dark.xaml" :
+                "pack://application:,,,/SwainStrain.CodeSamples;component/Resources/ResourceDictionary_Light.xaml";
 
             dictionary.Source = new Uri(source);
         }

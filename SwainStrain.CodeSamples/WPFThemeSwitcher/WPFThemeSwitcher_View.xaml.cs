@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 
-namespace BIMDev.CodeSamples.WPFThemeSwitcher
+namespace SwainStrain.CodeSamples.WPFThemeSwitcher
 {
     public partial class WPFThemeSwitcher_View : Window
     {
@@ -25,8 +25,8 @@ namespace BIMDev.CodeSamples.WPFThemeSwitcher
 
             // Load the appropriate theme resource dictionary based on the active theme
             var source = theme == UITheme.Dark ?
-                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Dark.xaml" :
-                "pack://application:,,,/BIMDev.CodeSamples;component/Resources/ResourceDictionary_Light.xaml";
+                "pack://application:,,,/SwainStrain.CodeSamples;component/Resources/ResourceDictionary_Dark.xaml" :
+                "pack://application:,,,/SwainStrain.CodeSamples;component/Resources/ResourceDictionary_Light.xaml";
 
             // Apply the resource dictionary to the window
             dictionary.Source = new Uri(source);

@@ -1,15 +1,16 @@
 ﻿using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.ApplicationServices;
-using BIMDev.CodeSamples.WPFThemeSwitcher;
+using SwainStrain.CodeSamples.WPFThemeSwitcher;
+using SwainStrain.CodeSamples.TaskDialogMultipleOptions;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Media.Imaging;
-using BIMDev.CodeSamples.DockablePane;
+using SwainStrain.CodeSamples.DockablePane;
 
-namespace BIMDev.CodeSamples
+namespace SwainStrain.CodeSamples
 {
     public class App : IExternalApplication
     {
@@ -23,13 +24,19 @@ namespace BIMDev.CodeSamples
 
             string assemblyPath = executingAssembly.Location;
 
-            application.CreateRibbonTab("BIMDevCodeSamples");
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel("BIMDevCodeSamples", "BIMDevCodeSamples");
+            application.CreateRibbonTab("SwainStrainCodeSamples");
+            RibbonPanel ribbonPanel = application.CreateRibbonPanel("SwainStrainCodeSamples", "SwainStrainCodeSamples");
 
-            this.AddPushButton(ribbonPanel, "WPFThemeSwitcher", "WPF Theme \nSwitcher", assemblyPath,
+            AddPushButton(ribbonPanel, "WPFThemeSwitcher", "WPF Theme \nSwitcher", assemblyPath,
                 typeof(WPFThemeSwitcher_Command).FullName,
                 "WPF Theme Switcher",
-                "BIMDev.CodeSamples.Resources.WPFThemeSwitcher_Icon.png", typeof(WPFThemeSwitcher_Availability).FullName);
+                "SwainStrain.CodeSamples.Resources.WPFThemeSwitcher_Icon.png", 
+                typeof(WPFThemeSwitcher_Availability).FullName);
+            AddPushButton(ribbonPanel, "TaskDialogMultipleOptions", "Task Dialog\nMultiple Options", assemblyPath,
+                typeof(TaskDialogMultipleOptions_Command).FullName,
+                "Task Dialog Multiple Options",
+                "SwainStrain.CodeSamples.Resources.TaskDialogMultipleOptions_Icon.png", 
+                typeof(TaskDialogMultipleOptions_Availability).FullName);
 
             Assembly.LoadFrom(Path.Combine(
     Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
@@ -57,7 +64,7 @@ namespace BIMDev.CodeSamples
 
             try
             {
-                uiApplication.RegisterDockablePane(id, "BIMDev Dockable Pane",
+                uiApplication.RegisterDockablePane(id, "SwainStrain Dockable Pane",
                         dock as IDockablePaneProvider);
             }
             catch (Exception ex)
