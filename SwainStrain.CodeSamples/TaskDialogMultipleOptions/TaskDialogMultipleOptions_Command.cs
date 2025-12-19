@@ -29,12 +29,10 @@ namespace SwainStrain.CodeSamples.TaskDialogMultipleOptions
                 Id = "SwainStrain.SampleDialog", // custom dialog id
                 TitleAutoPrefix = false, // don't prefix title with add-in name
 
-                // footer area text
-                FooterText = "Footer text goes here.",
-
-                // extra text areas
-                ExpandedContent = "More details here.",
-                VerificationText = "Verification text shows here",
+                
+                FooterText = "Footer text goes here.",// footer area text                
+                ExpandedContent = "More details here.", // extra text area
+                VerificationText = "Verification text shows here", //a checkbox the user can toggle
                 //ExtraCheckBoxText = "Check this box if you agree", //ExtraCheckBoxText cannot be used together with VerificationText
 
                 // buttons
@@ -63,31 +61,24 @@ namespace SwainStrain.CodeSamples.TaskDialogMultipleOptions
                 case TaskDialogResult.Cancel:
                     userAction = "User cancelled the dialog.";
                     break;
-
                 case TaskDialogResult.CommandLink1:
                     userAction = "User selected Option 1.";
                     break;
-
                 case TaskDialogResult.CommandLink2:
                     userAction = "User selected Option 2.";
                     break;
-
                 case TaskDialogResult.CommandLink3:
                     userAction = "User selected Option 3.";
                     break;
-
                 case TaskDialogResult.CommandLink4:
                     userAction = "User selected Option 4.";
                     break;
-
                 case TaskDialogResult.Yes:
                     userAction = "User clicked Yes.";
                     break;
-
                 case TaskDialogResult.No:
                     userAction = "User clicked No.";
                     break;
-
                 default:
                     userAction = $"User selected: {result}.";
                     break;

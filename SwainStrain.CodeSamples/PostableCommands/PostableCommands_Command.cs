@@ -1,10 +1,5 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwainStrain.CodeSamples.PostableCommands
 {
@@ -54,7 +49,7 @@ namespace SwainStrain.CodeSamples.PostableCommands
             switch (result)
             {
                 case TaskDialogResult.CommandLink1:
-                    commandToPost = PostableCommand.Wall;
+                    commandToPost = PostableCommand.ArchitecturalWall;
                     break;
 
                 case TaskDialogResult.CommandLink2:

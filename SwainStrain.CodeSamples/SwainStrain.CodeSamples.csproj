@@ -55,6 +55,7 @@
         <OutputPath>bin\2026Debug\</OutputPath>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="Resources\PostableCommands_Icon.png" />
       <None Remove="Resources\TaskDialogMultipleOptions_Icon.png" />
       <None Remove="Resources\WPFThemeSwitcher_Icon.png" />
     </ItemGroup>
@@ -79,6 +80,7 @@
         </BootstrapperPackage>
     </ItemGroup>
     <ItemGroup>
+      <EmbeddedResource Include="Resources\PostableCommands_Icon.png" />
       <EmbeddedResource Include="Resources\TaskDialogMultipleOptions_Icon.png" />
       <EmbeddedResource Include="Resources\WPFThemeSwitcher_Icon.png" />
     </ItemGroup>

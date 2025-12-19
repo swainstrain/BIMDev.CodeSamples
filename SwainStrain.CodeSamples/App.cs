@@ -9,6 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Media.Imaging;
 using SwainStrain.CodeSamples.DockablePane;
+using SwainStrain.CodeSamples.PostableCommands;
 
 namespace SwainStrain.CodeSamples
 {
@@ -37,6 +38,11 @@ namespace SwainStrain.CodeSamples
                 "Task Dialog Multiple Options",
                 "SwainStrain.CodeSamples.Resources.TaskDialogMultipleOptions_Icon.png", 
                 typeof(TaskDialogMultipleOptions_Availability).FullName);
+            AddPushButton(ribbonPanel, "PostableCommands", "Postable\nCommands", assemblyPath,
+                typeof(PostableCommands_Command).FullName,
+                "Postable Commands",
+                "SwainStrain.CodeSamples.Resources.PostableCommands_Icon.png", 
+                typeof(PostableCommands_Availability).FullName);
 
             Assembly.LoadFrom(Path.Combine(
     Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
