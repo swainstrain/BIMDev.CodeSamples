@@ -7,4 +7,7 @@
   <Project Path="SwainStrain.CodeSamples/SwainStrain.CodeSamples.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
+  <Project Path="SwainStrain.Target/SwainStrain.Target.csproj" Id="9f8f4f3d-c5c3-45ee-b47d-3ab6d7c7c02b">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>

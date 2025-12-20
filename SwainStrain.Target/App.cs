@@ -1,67 +1,40 @@
-﻿using Autodesk.Revit.DB.Events;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
-using Autodesk.Revit.ApplicationServices;
-using SwainStrain.CodeSamples.WPFThemeSwitcher;
-using SwainStrain.CodeSamples.TaskDialogMultipleOptions;
+using SwainStrain.Target.DockablePane;
+using SwainStrain.Target.PostableCommands;
+using SwainStrain.Target.TaskDialogMultipleOptions;
+using SwainStrain.Target.WPFThemeSwitcher;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Media.Imaging;
-using SwainStrain.CodeSamples.DockablePane;
-using SwainStrain.CodeSamples.PostableCommands;
 
-namespace SwainStrain.CodeSamples
+namespace SwainStrain.Target
 {
     public class App : IExternalApplication
     {
-        public static App ThisApp { get; private set; }
-        public UIControlledApplication uIControlledApplication { get; private set; }
         public Guid DockablePanelGuid => new Guid("{65B4FB52-EF30-4031-8D6D-CE08618336E7}");
 
         public Result OnStartup(UIControlledApplication application)
         {
-            ThisApp = this;
-            uIControlledApplication = application;
+
+            TaskDialog.Show("Info Message", "SwainStrain Target Loaded Successfully!");
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
-            Assembly executingAssembly = Assembly.GetExecutingAssembly();            
+            Assembly executingAssembly = Assembly.GetExecutingAssembly();
 
             string assemblyPath = executingAssembly.Location;
 
-            application.CreateRibbonTab("SwainStrainCodeSamples");
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel("SwainStrainCodeSamples", "SwainStrainCodeSamples");
+            application.CreateRibbonTab("test4");
+            RibbonPanel ribbonPanel = application.CreateRibbonPanel("test4", "test4");
 
-            AddPushButton(ribbonPanel, "WPFThemeSwitcher", "WPF Theme \nSwitcher", assemblyPath,
-                typeof(WPFThemeSwitcher_Command).FullName,
-                "WPF Theme Switcher",
-                "SwainStrain.CodeSamples.Resources.WPFThemeSwitcher_Icon.png", 
-                typeof(WPFThemeSwitcher_Availability).FullName);
             AddPushButton(ribbonPanel, "TaskDialogMultipleOptions", "Task Dialog\nMultiple Options", assemblyPath,
                 typeof(TaskDialogMultipleOptions_Command).FullName,
                 "Task Dialog Multiple Options",
-                "SwainStrain.CodeSamples.Resources.TaskDialogMultipleOptions_Icon.png", 
+                "SwainStrain.Target.Resources.TaskDialogMultipleOptions_Icon.png",
                 typeof(TaskDialogMultipleOptions_Availability).FullName);
-            AddPushButton(ribbonPanel, "PostableCommands", "Postable\nCommands", assemblyPath,
-                typeof(PostableCommands_Command).FullName,
-                "Postable Commands",
-                "SwainStrain.CodeSamples.Resources.PostableCommands_Icon.png", 
-                typeof(PostableCommands_Availability).FullName);
-            AddPushButton(ribbonPanel, "test", "testt", assemblyPath,
-                typeof(Test_Command).FullName,
-                "test Commands",
-                "SwainStrain.CodeSamples.Resources.PostableCommands_Icon.png", 
-                typeof(Test_Availability).FullName);
-
-            Assembly.LoadFrom(Path.Combine(
-    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-    "MaterialDesignThemes.Wpf.dll"));
-            Assembly.LoadFrom(Path.Combine(
-    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-    "MaterialDesignColors.dll"));
-            Assembly.LoadFrom(Path.Combine(
-    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-    "Microsoft.Xaml.Behaviors.dll"));
 
             application.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized;
 

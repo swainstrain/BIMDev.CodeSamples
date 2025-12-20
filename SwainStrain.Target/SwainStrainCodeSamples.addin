@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+    <AddIn Type="Application">
+        <Name>SwainStrainCodeSamples</Name>
+        <Assembly>SwainStrain.CodeSamples.dll</Assembly>
+        <AddInId>
+            81DFD81E-8993-4FC3-B1D0-923452716159
+        </AddInId>
+        <FullClassName>SwainStrain.CodeSamples.App</FullClassName>
+        <VendorId>SwainStrainCodeSamples</VendorId>
+    </AddIn>
+</RevitAddIns>

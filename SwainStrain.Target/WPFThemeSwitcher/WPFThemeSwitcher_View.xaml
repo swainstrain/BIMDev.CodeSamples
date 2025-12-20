@@ -1,0 +1,85 @@
+﻿<Window x:Class="SwainStrain.Target.WPFThemeSwitcher.WPFThemeSwitcher_View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:SwainStrain.Target.WPFThemeSwitcher"
+        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        WindowStartupLocation="CenterOwner"
+        Title="WPF Theme Switcher"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        UseLayoutRounding="True"
+        Height="200"
+        Width="570">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/SwainStrain.Target;component/Resources/ResourceDictionary_Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/SwainStrain.Target;component/Resources/ResourceDictionary_Common.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="ThemeSelector_ComboBox"
+                  Grid.Row="0"
+                  Margin="5,0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Stretch"
+                  materialDesign:HintAssist.Hint="Sample ComboBox" />
+
+        <TextBox x:Name="SampleTextBox"
+                 Grid.Row="1"
+                 Margin="5,0"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Stretch"
+                 materialDesign:HintAssist.Hint="Sample TextBox" />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Ok_Button"
+                    Grid.Column="0"
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    Content="OK"
+                    IsDefault="True"
+                    Height="35" />
+            <Button x:Name="Cancel_Button"
+                    Grid.Column="1"
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    Content="Cancel"
+                    IsCancel="True" />
+
+
+
+        </Grid>
+
+
+
+
+        </Grid>
+
+</Window>
